@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Avery
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -12,6 +12,20 @@ public class NumberSearch
 {
 	public static int getNextLargest(int[] numArray, int searchNum)
 	{
-		return -1;
+		int[] larger = new int[numArray.length];
+		int count = 0;
+		for(int i = 0; i < numArray.length; i++){
+			if(numArray[i] > searchNum){
+				larger[count] = numArray[i];
+				count++;
+			}
+		}
+		int smallest = Integer.MAX_VALUE;
+		for(int i = 0; i < larger.length; i++){
+			if(larger[i] < smallest && larger[i] > 0){
+				smallest = larger[i];
+			}
+		}
+		return smallest;
 	}
 }
