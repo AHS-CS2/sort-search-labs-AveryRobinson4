@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Avery
 
 import java.util.Arrays;
 import java.util.Scanner;
