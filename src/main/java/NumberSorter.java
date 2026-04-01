@@ -1,6 +1,6 @@
 //(c) A+ Computer Science
 //www.apluscompsci.com
-//Name -
+//Name - Avery
 
 import java.util.Arrays; 
 import java.util.Scanner;
@@ -15,12 +15,31 @@ public class NumberSorter
 	private static int getNumDigits(int number)
 	{
 		int count = 0;
-		return count;
+		int num = number;
+		while(num / 10 > 0){
+			num = num/10;
+			count++;
+		}
+		return count + 1;
 	}
 
 	public static int[] getSortedDigitArray(int number)
 	{
-		int[] sorted = null;
-		return sorted;
+		int[] reverse = new int[NumberSorter.getNumDigits(number)];
+
+		reverse[0] = number % 10;
+		for(int i = 1; i < reverse.length; i++){
+			if(i == reverse.length - 1){
+				number = (number / 10) % 10;
+				reverse[i] = number;
+			}else if(i < reverse.length){
+				number = number / 10;
+				int last = number % 10;
+				reverse[i] = last;
+			}
+		}
+
+		Arrays.sort(reverse);
+		return reverse;
 	}
 }
